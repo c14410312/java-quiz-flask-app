@@ -1,5 +1,5 @@
 //store the chosen categories
-const categories = []
+let categories = []
 
 
 $("document").ready(function(){
@@ -22,10 +22,25 @@ $("document").ready(function(){
 		//console.log(categories);
 	});
 
+	//when the generate quiz button is clicked
 	$("#gen-quiz").click(function() {
 		query = serialize({cat_list: categories});
 		console.log(query);
 		window.location.replace($SCRIPT_ROOT + '/quiz' + '?' + query);
+	});
+
+	//when the solution button is clicked
+	//need to parse string to html to render the tags
+	$(function(){
+		console.log("clicked solution");
+		//get the current string in body
+		let str = $('.modal-body').text();
+		
+		//parse the HTML
+		let html = $.parseHTML( str );
+		//target the solution body
+		let $solutionBody = $('.modal-body');
+		$solutionBody.html( html );
 	});
 });
 

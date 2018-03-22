@@ -17,5 +17,6 @@ class Post(db.Model):
     __table__ = db.Model.metadata.tables['posts']
 
     def __repr__(self):
-        return '<posts {} {}>'.format(self.title, self.body)
+
+        return '<h1> {} </h1> <p> {} </p>'.format(self.title,self.answer)
 
