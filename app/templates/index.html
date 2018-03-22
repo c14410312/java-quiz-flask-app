@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<section class="text-center">
+		<button type="button" class="btn btn-lg btn-primary">
+			Generate Quiz
+		</button>
+	</section>
+
+	<section id="category-choices" class="text-center">
+		{% for category in categories %}
+			<button  type="button" class="btn btn-md cat-button">
+				{{ category.name }}
+			</button>
+    		{% endfor %}
+	</section>
+
+{% endblock %}
