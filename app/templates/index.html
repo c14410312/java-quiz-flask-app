@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-	<section class="text-center">
-		<button type="button" class="btn btn-lg btn-primary">
+<section class="container">
+	<section class="row justify-content-md-center">
+		<a id="gen-quiz" type="button" class="btn btn-lg btn-primary" href="#">
 			Generate Quiz
-		</button>
+		</a>
 	</section>
 
-	<section id="category-choices" class="text-center">
+	<hr>
+	<h2 id="cat-header" class="row justify-content-md-center"> Select some categories! </h2>
+	<section id="cat-choices" class="row justify-content-md-center">
 		{% for category in categories %}
-			<button  type="button" class="btn btn-md cat-button">
+			<button  type="button" class="btn btn-md btn-default cat-button">
 				{{ category.name }}
 			</button>
     		{% endfor %}
 	</section>
-
+</section>
 {% endblock %}
+

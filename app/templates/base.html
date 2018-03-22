@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" src="{{ url_for('static', filename='app.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='app.css')}}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,8 @@
 	</head>
 	<body>
 		<div class="jumbotron text-center"> 
-			<h1> 
-				<a href="/index">Java Quiz App</a>
+			<h1 class="text-secondary"> 
+				Java Quiz App
 			</h1>
 		</div>
 		<!-- block content is used to place derived templates
@@ -34,6 +34,9 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 		<script src="{{ url_for('static', filename='scripts.js')}}"></script>
+		<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+		</script>
 	</body>
 </html>
 
