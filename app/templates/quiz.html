@@ -8,16 +8,16 @@
 		</div>
 	</div>
 	<hr>
-	<section class="row justify-content-md-center">
+	<section class="row justify-content-md-center" style="height:50%;">
 		
-		<div class="col-2 nav-chevron" >
+		<div class="col-1 nav-chevron" >
 		<!-- Left and right controls -->
 			<a class="carousel-control-prev" href="#demo" data-slide="prev" id="prev-question">
-				<span class="carousel-control-prev-icon "></span>
+				<img class="img-fluid" id="prev-icon" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Chevron_left_font_awesome.svg"></img>
 			</a>
 		</div>
 
-		<div id="demo" class="carousel slide col-8">
+		<div id="demo" class="carousel slide col-10">
 			<div class="carousel-inner">
 				{% for post in query %}
 					{% if loop.index == 1 %}
@@ -58,8 +58,9 @@
 				{% endfor %}
 				<!-- LAST SLIDE -->
 				<div class="carousel-item" id="11">
-					<section class="row justify-content-md-center">
-						<a type="button" class="btn btn-lg btn-primary" href="./">
+					<section class="text-center">
+						<h2>Quiz Complete!</h2>
+						<a type="button" class="btn btn-lg btn-dark" href="./">
 							Return to main page
 						</a>
 					</section>
@@ -67,9 +68,9 @@
 			</div>
 		</div>
 		
-		<div class="col-2">
+		<div class="col-1">
 			<a class="carousel-control-next" href="#demo" data-slide="next" id="next-question">
-				<span class="carousel-control-next-icon"></span>
+				<img class="img-fluid" id="next-icon" src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Chevron_right_font_awesome.svg"></img>
 			</a>
 		</div>
 
@@ -81,7 +82,7 @@
         <div class="clearfix">
 		{% for cat in cats %}
   		<span class="float-left category-label text-dark bg-light">
-  			<p>{{ cat }}</p>
+  			<kbd>{{ cat }}</kbd>
   		</span>
   		{% endfor %}
 		</div>

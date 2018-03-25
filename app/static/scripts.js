@@ -38,6 +38,18 @@ $("document").ready(function(){
 		let currIndex = $('.carousel .active').attr('id');
 		newWidth = (currIndex/totalItems) * 100;
 		$('#progBar').width(newWidth+'%');
+
+		if(currIndex == totalItems){
+			$('#next-icon').fadeOut("slow");
+		} else{
+			$('#next-icon').fadeIn("fast");
+		}
+
+		if(currIndex > 1){
+			$('#prev-icon').fadeIn("slow");
+		} else{
+			$('#prev-icon').fadeOut("fast");
+		}
 	});
 
 	$(document).on("click", "#solution-but", function () {
@@ -65,10 +77,7 @@ $("document").ready(function(){
 		let $solutionBody = $('.modal-body');
 		$solutionBody.html( html );
 
-		/*PROGRESS BAR INITIALIZATION*/
-		newWidth = ($cntr) / 10;
-		$('#progBar').width((newWidth * 100) + "%");
-		$cntr++;
+		$('#prev-icon').fadeOut("slow");
 	});
 
 });
