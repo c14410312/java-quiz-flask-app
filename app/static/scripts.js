@@ -4,6 +4,8 @@ let categories = []
 
 $("document").ready(function(){
 
+	$cntr = 1;
+
 	//function to deal with button clicks
 	$(".cat-button").click(function() {
 		
@@ -29,10 +31,31 @@ $("document").ready(function(){
 		window.location.replace($SCRIPT_ROOT + '/quiz' + '?' + query);
 	});
 
+	//updates the progress bar on the carousel
+	$('.carousel').on('slid.bs.carousel', function () {
+		let totalItems = $('.carousel-item').length;
+		let carouselData = $(this).data('bs.carousel');
+		let currIndex = $('.carousel .active').attr('id');
+		newWidth = (currIndex/totalItems) * 100;
+		$('#progBar').width(newWidth+'%');
+	});
+
+	$(document).on("click", "#solution-but", function () {
+		let title = $(this).data('title');
+    	let ans = $(this).data('answer');
+    	$(".modal-title").html( title );
+     	$(".modal-body").html( ans );
+
+	});
+
+	$('.carousel').carousel({
+    	interval:false,
+    	wrap: false
+	});
+
 	//when the solution button is clicked
 	//need to parse string to html to render the tags
 	$(function(){
-		console.log("clicked solution");
 		//get the current string in body
 		let str = $('.modal-body').text();
 		
@@ -41,7 +64,13 @@ $("document").ready(function(){
 		//target the solution body
 		let $solutionBody = $('.modal-body');
 		$solutionBody.html( html );
+
+		/*PROGRESS BAR INITIALIZATION*/
+		newWidth = ($cntr) / 10;
+		$('#progBar').width((newWidth * 100) + "%");
+		$cntr++;
 	});
+
 });
 
 const serialize = (obj) => {
@@ -54,3 +83,13 @@ const serialize = (obj) => {
 	}
 }
 
+/*
+const navigationVisibility = () => {
+	console.log("initialized");
+	if($cntr == 1){
+		$("#prev-question").hide();
+	}
+	if($cntr > 1){
+		$("#prev-question").show();
+	}
+}*/

@@ -34,4 +34,4 @@ def quiz():
     #get questions related to categories chosen
     query = get_questions(selected_cats)
 
-    return render_template('quiz.html', title='Quiz', query=query)
+    return render_template('quiz.html', title='Quiz', query=query, cats=selected_cats)

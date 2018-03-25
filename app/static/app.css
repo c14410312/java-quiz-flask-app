@@ -9,7 +9,7 @@
 
 /*buttons*/
 .cat-button{
-	margin: 5px;
+	margin: 8px;
 }
 
 #gen-quiz{
@@ -22,10 +22,50 @@
 	 display: table; 
 	 overflow-y: auto;    
 	 overflow-x: auto;
-	 width: auto;
+	 max-width: 300px;
 	 min-width: 300px;   
 }
 
-.carousel-inner {
-	
+#solution-but-section{
+	margin:20px;
+}
+
+#exampleModal {
+	 /*max-width: 300px;*/
+}
+
+#question-title{
+	margin:15px;
+}
+
+.category-label{
+	border-radius: 5px;
+	margin:3px;
+}
+
+.category-label > p{
+	margin:3px;
+}
+.footer{
+	position: absolute;
+  	bottom: 0;
+  	width: 100%;
+  	/* Set the fixed height of the footer here */
+  	height: 80px; 
+}
+
+.carousel-control-next, .carousel-control-prev {
+	width:100%;
+	overflow-y: hidden;    
+	overflow-x: hidden;
+	background-color: black;
+}
+
+.nav-chevron{
+	background-color:;
+}
+
+.nav-chevron > a{
+	margin-right:auto;
+	margin-left: auto; 
 }

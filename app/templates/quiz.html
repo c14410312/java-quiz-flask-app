@@ -1,59 +1,93 @@
 {% extends "base.html" %}
 
 {% block content %}
-	
-<div class="container">
-	<div id="demo" class="carousel slide">
-		<div class="carousel-inner">
-			{% for post in query %}
-				{% if loop.index == 1 %}
-				<div class="carousel-item active">
-				{% endif %}
-				{% if loop.index > 1 %}
-				<div class="carousel-item">
-				{% endif %}
-					<section class="row justify-content-md-center"> 	
-						<h2 class="text-center text-dark">{{ post.Post.title }}</h2>
-					</section>
 
-					<section class="row justify-content-md-center">	  
-						<!-- Button trigger modal -->
-						<button id="solution-but" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-							  Solution
-						</button>
-					</section>
-				</div>
-				<!-- Modal -->
-				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Solution - {{ post.Post.title }}</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								{{ post.Post.answer }}
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<div class="container">
+	<div class="progress">
+		<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 10%" id="progBar">
+		</div>
+	</div>
+	<hr>
+	<section class="row justify-content-md-center">
+		
+		<div class="col-2 nav-chevron" >
+		<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#demo" data-slide="prev" id="prev-question">
+				<span class="carousel-control-prev-icon "></span>
+			</a>
+		</div>
+
+		<div id="demo" class="carousel slide col-8">
+			<div class="carousel-inner">
+				{% for post in query %}
+					{% if loop.index == 1 %}
+					<div class="carousel-item active" id="{{ loop.index }}">
+					{% endif %}
+					{% if loop.index > 1 %}
+					<div class="carousel-item" id="{{ loop.index }}">
+					{% endif %}
+						<section class="row justify-content-md-center" id="question-title"> 	
+							<h2 class="text-center text-dark">{{ post.Post.title }}</h2>
+						</section>
+
+						<section class="text-center" id="solution-but-section">	  
+							<!-- Button trigger modal -->
+							<button id="solution-but" type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal" data-answer='{{ post.Post.answer }}' data-title='{{ post.Post.title}}'>
+								  Solution
+							</button>
+						</section>
+					</div>
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel"></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
 							</div>
 						</div>
 					</div>
+				{% endfor %}
+				<!-- LAST SLIDE -->
+				<div class="carousel-item" id="11">
+					<section class="row justify-content-md-center">
+						<a type="button" class="btn btn-lg btn-primary" href="./">
+							Return to main page
+						</a>
+					</section>
 				</div>
-			{% endfor %}
+			</div>
+		</div>
+		
+		<div class="col-2">
+			<a class="carousel-control-next" href="#demo" data-slide="next" id="next-question">
+				<span class="carousel-control-next-icon"></span>
+			</a>
 		</div>
 
-		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#demo" data-slide="prev">
-			<span class="carousel-control-prev-icon "></span>
-		</a>
-		<a class="carousel-control-next" href="#demo" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
-	</div>
+	</section>
 </div>
+<footer class="footer navbar-fixed-bottom">
+	<hr>
+    <div class="container">
+        <div class="clearfix">
+		{% for cat in cats %}
+  		<span class="float-left category-label text-dark bg-light">
+  			<p>{{ cat }}</p>
+  		</span>
+  		{% endfor %}
+		</div>
+    </div>
+</footer>
+
 
 	
 {% endblock %}
