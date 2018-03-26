@@ -31,6 +31,11 @@ $("document").ready(function(){
 		window.location.replace($SCRIPT_ROOT + '/quiz' + '?' + query);
 	});
 
+	//when the generate quiz button is clicked
+	$("#index-button").click(function() {
+		window.location.replace($SCRIPT_ROOT + '/');
+	});
+
 	//updates the progress bar on the carousel
 	$('.carousel').on('slid.bs.carousel', function () {
 		let totalItems = $('.carousel-item').length;

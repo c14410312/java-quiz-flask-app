@@ -1,6 +1,6 @@
 /*BASE CSS*/
 .jumbotron {
-	background-image: url("");
+	background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8) ), url("http://getwallpapers.com/wallpaper/full/b/a/0/365455.jpg");
 	background-position: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -11,6 +11,8 @@
 #subheader-jumbotron{
 	font-size: 15px;
 	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 10px;
 }
 
@@ -24,14 +26,26 @@ body{
 	margin: 10px;
 }
 
+#cat-choices{
+	margin-left: auto;
+    margin-right: auto;	
+}
 
 /*buttons*/
 .cat-button{
 	margin: 8px;
+	transition: transform .4s; /* Animation */
+}
+
+.cat-button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #gen-quiz{
 	border-radius: 5px;
+	margin-left: auto;
+    margin-right: auto;
 }
 
 .genquiz-button {
@@ -82,6 +96,11 @@ body{
 	 overflow-x: auto;
 	 max-width: 300px;
 	 min-width: 300px;   
+}
+
+.modal-body{
+	min-width: 400px;
+	max-width: 500px;
 }
 
 #solution-but-section{
