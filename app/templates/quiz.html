@@ -59,7 +59,7 @@
 				<!-- LAST SLIDE -->
 				<div class="carousel-item" id="11">
 					<section class="text-center">
-						<h2>Quiz Complete!</h2>
+						<h2>End of quiz</h2>
 						<button type="button" id="index-button" class="btn btn-lg btn-dark genquiz-button" href="#">
 							<span>Home</span>
 						</button>
@@ -80,11 +80,16 @@
 	<hr>
     <div class="container">
         <div class="clearfix">
-		{% for cat in cats %}
-  		<span class="float-left category-label text-dark bg-light">
-  			<kbd>{{ cat }}</kbd>
-  		</span>
-  		{% endfor %}
+			{% for cat in cats %}
+	  		<span class="float-left category-label text-dark bg-light">
+	  			<kbd>{{ cat }}</kbd>
+	  		</span>
+	  		{% endfor %}
+
+	  		<span class="float-right" id="stackoverflow-label">
+	  			Powered by 
+	  			<img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.png?v=9c558ec15d8a" class="img-thumbnail" alt="stackoverflow logo" width="120" height="30">
+	  		</span>
 		</div>
     </div>
 </footer>
