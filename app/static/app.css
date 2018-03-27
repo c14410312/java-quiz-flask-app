@@ -21,7 +21,8 @@
 }
 
 #stackoverflow-label{
-	display: inline-block;
+	display: inline;
+	height: 
 }
 
 /*INDEX PAGE CSS*/
@@ -107,8 +108,8 @@ body{
 }
 
 .modal-body{
-	min-width: 400px;
-	max-width: 500px;
+	/*min-width: 400px;
+	max-width: 500px;*/
 }
 
 #solution-but-section{
