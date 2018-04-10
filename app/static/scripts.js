@@ -60,9 +60,16 @@ $("document").ready(function(){
 	$(document).on("click", "#solution-but", function () {
 		let title = $(this).data('title');
     	let ans = $(this).data('answer');
-    	$(".modal-title").html( title );
-     	$(".modal-body").html( ans );
+    	$("#solutionModalLabel").html( title );
+     	$("#solutionModal-body").html( ans );
 
+	});
+
+	$(document).on("click", "#moreInfo-but", function () {
+		let title = $(this).data('title');
+    	let body = $(this).data('body');
+    	$("#moreInfoModalLabel").html( title );
+     	$("#moreInfoModal-body").html( body );
 	});
 
 	$('.carousel').carousel({

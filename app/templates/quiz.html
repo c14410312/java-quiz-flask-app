@@ -31,23 +31,26 @@
 						</section>
 
 						<section class="text-center" id="solution-but-section">	  
+							<button id="moreInfo-but" type="button" class="btn btn-warning text-center" data-toggle="modal" data-target="#moreInfoModal" data-body='{{ post.Post.body }}' data-title='{{ post.Post.title}}'>
+								  More Info
+							</button>
 							<!-- Button trigger modal -->
-							<button id="solution-but" type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#exampleModal" data-answer='{{ post.Post.answer }}' data-title='{{ post.Post.title}}'>
+							<button id="solution-but" type="button" class="btn btn-primary text-center" data-toggle="modal" data-target="#solutionModal" data-answer='{{ post.Post.answer }}' data-title='{{ post.Post.title}}'>
 								  Solution
 							</button>
 						</section>
 					</div>
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<!-- Solution Modal -->
+					<div class="modal fade" id="solutionModal" tabindex="-1" role="dialog" aria-labelledby="solutionModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel"></h5>
+									<h5 class="modal-title" id="solutionModalLabel"></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
+								<div class="modal-body" id="solutionModal-body">
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -55,6 +58,26 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- more info modal -->
+					<div class="modal fade" id="moreInfoModal" tabindex="-1" role="dialog" aria-labelledby="moreInfoModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="moreInfoModalLabel"></h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body" id="moreInfoModal-body">
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				{% endfor %}
 				<!-- LAST SLIDE -->
 				<div class="carousel-item" id="11">

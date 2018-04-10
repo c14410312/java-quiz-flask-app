@@ -32,8 +32,11 @@ def index():
 def quiz():
     #retrieves the selected cats from url query --> converts to list
     data = request.args.get('cat_list')
+    data = data.replace(', ', '-')
     selected_cats = data.split(",")
     #get questions related to categories chosen
+    selected_cats = [el.replace('-', ', ') for el in selected_cats]
+    print(selected_cats)
     query = get_questions(selected_cats)
     if(selected_cats[0] == ''):
         selected_cats=["random-selection"]

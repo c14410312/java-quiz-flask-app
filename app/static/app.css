@@ -112,12 +112,12 @@ body{
 	max-width: 500px;*/
 }
 
-#solution-but-section{
-	margin:20px;
+.modal-open {
+    overflow: scroll;
 }
 
-#exampleModal {
-	 /*max-width: 300px;*/
+#solution-but-section{
+	margin:20px;
 }
 
 #question-title{
