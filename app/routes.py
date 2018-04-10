@@ -14,7 +14,10 @@ from sqlalchemy.sql import func
 
 def get_questions(selected_categories):
     #gets all the posts related to selected categories by user
-    query = db.session.query(Post, Category).join(Category).filter(Category.name.in_(selected_categories)).order_by(func.random()).limit(10)
+    if selected_categories[0] == '':
+        query = db.session.query(Post, Category).join(Category).order_by(func.random()).limit(10).all()
+    else:
+        query = db.session.query(Post, Category).join(Category).filter(Category.name.in_(selected_categories)).order_by(func.random()).limit(10)
     return query
 
 
@@ -30,8 +33,8 @@ def quiz():
     #retrieves the selected cats from url query --> converts to list
     data = request.args.get('cat_list')
     selected_cats = data.split(",")
-    
     #get questions related to categories chosen
     query = get_questions(selected_cats)
-
+    if(selected_cats[0] == ''):
+        selected_cats=["random-selection"]
     return render_template('quiz.html', title='Quiz', query=query, cats=selected_cats)
