@@ -72,7 +72,7 @@ lazy-object-proxy==1.2.2
 llvmlite==0.18.0
 locket==0.2.0
 lxml==3.7.3
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==0.23
 marshmallow==2.15.0
 matplotlib==2.0.2
